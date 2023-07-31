@@ -1,0 +1,26 @@
+{% extends 'base.jinja' %}
+
+{% block content %}
+
+<h1> {{ treatment_name }} </h1>
+
+<p>Length: {{ treatment_length }}</p>
+
+<p>Price: {{ treatment_price }}</p>
+
+<table>
+    {% for treatment in treatments %}
+    <tr>
+        <td><a href="/treatments/show.jinja"> {{treatment_list}} </a></td>
+        <td>|</td>
+        <td>{{ treatment_name }}</td>
+        <td>|</td>
+        <td>{{ treatment_length }}</td>
+        <td>|</td>
+        <td>{{ treatment_price }}</td>
+        <td>|</td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}.

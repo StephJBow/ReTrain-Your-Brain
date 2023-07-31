@@ -1,0 +1,60 @@
+{% extends 'base.jinja' %}
+
+{% block content %}
+{# <h1>Your Booking</h1> #}
+{# <a href="/customer_id/new_booking">Book a Treatment</a> #}
+{# <p>List of booked treatments:</p> #}
+    {# <tr>
+        <th>{{  booking_name }} </th>
+        <th></th>
+        <th>Date:</th>
+        <th></th>
+        <th>Time:</th>
+    </tr> #}
+
+<table>
+    {% for booking in bookings_list %}
+    <tr>
+        <td><a href="/booking/show.jinja"> {{show_booking}} </a></td>
+        <td>|</td>
+        <td>{{ booking_name }}</td>
+        <td>|</td>
+        <td>{{ booking_date }}</td>
+        <td>|</td>
+        <td>{{ booking_time }}</td>
+        <td>|</td>
+    </tr>
+    {% endfor %}
+</table>
+
+{# 
+{% for booking in bookings_list %}
+    <div class="bookings">
+    <div class="bookings__content">
+    <div class="bookings__description">
+        <h1> {{bookings.booking_name}} </h1>
+        <span class="bookings__date">{{bookings.bookings_date}}</span>
+        <span class="bookings__time">{{bookings.bookings_time}}</span>
+    <div>
+{% endfor %} {% endblock %}
+ #}
+
+
+
+{# {% extends 'base.jinja' %}
+
+{% block content %}
+
+{# <h1> {{ bookings.id }} </h1>
+
+<p>Booking Name: {{ booking_name }}</p>
+
+<p>Booking Date: {{ booking_date }}</p> #}
+
+{# <ul>
+    {% for user in users  %}
+    <li>{{user.name}}</li>
+    {% endfor %}
+</ul> #}
+
+{# {% endblock %} #}

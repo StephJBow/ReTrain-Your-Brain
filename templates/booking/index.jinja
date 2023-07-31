@@ -1,0 +1,30 @@
+{% extends 'base.jinja' %}
+
+{% block content %}
+<h1>Your Bookings</h1>
+
+<p>List of booked treatments:</p>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th></th>
+        <th>Treatment</th>
+        <th></th>
+        <th>Date</th>
+        <th></th>
+        <th>Time</th>
+    </tr>
+    {% for booking in bookings_list %}
+    <tr>
+        <td><a href="/booking/index.jinja"> {{booking.customer_name}} </a></td>
+        <td>|</td>
+        <td>{{booking.treatment_name}} </td>
+        <td>|</td>
+        <td> {{booking.booking_date}} </td>
+        <td>|</td>
+        <td> {{booking.booking_time}} </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
