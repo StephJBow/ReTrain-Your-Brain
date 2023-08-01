@@ -5,43 +5,32 @@
 <form action="/new_booking" method="post">
     <div>
         <label for="customer_name">Customer Name:</label>
-        <input  type="text"
-                id="customer_name"
-                name="customer_name"
-                required
-                autofocus
-        />
+        <input type="text" id="customer_name" name="customer_name" required autofocus />
     </div>
     <div>
-        <label for="treatment_name">Treatment Name:</label>
-        <select name="treatment_name"
-                id="treatment_name" >
-                <option value="Learn to Code">Learn to Code</option>
-                <option value="Learn Molecular Physics">Learn Molecular Physics</option>
-                <option value="Learn to Crochet">Learn to Crochet</option>
-                <option value="Learn Kung-Fu">Learn Kung-Fu</option>
-                <option value="Learn to Cook Spaghetti Hoops">Learn to Cook Spaghetti Hoops</option>
-                required
+        <label for="treatment_id">Treatment Name:</label>
+        <select name="treatment_id" id="treatment_id">
+            {% for treatment in treatments %}
+            <option value={{ treatment.id }}>{{ treatment.treatment_name }}</option>
+            {% endfor %}
         </select>
     </div>
     <div>
         <label for="booking_date">Booking Date:</label>
-        <select name="booking_date"
-                id="booking_date" >
-                <option value="14.03.2264">14.03.2264</option>
-                <option value="07.11.2264">07.11.2264</option>
-                <option value="01.01.2265">01.01.2265</option>
-                <option value="29.01.2265">29.01.2265</option>
+        <select name="booking_date" id="booking_date">
+            <option value="14.03.2264">14.03.2264</option>
+            <option value="07.11.2264">07.11.2264</option>
+            <option value="01.01.2265">01.01.2265</option>
+            <option value="29.01.2265">29.01.2265</option>
         </select>
     </div>
     <div>
         <label for="booking_time">Booking Time:</label>
-        <select name="booking_time"
-                id="booking_time" >
-                <option value="10:00">10:00</option>
-                <option value="13:00">13:00</option>
-                <option value="16:00">16:00</option>
-                <option value="12:00">12:00</option>
+        <select name="booking_time" id="booking_time">
+            <option value="10:00">10:00</option>
+            <option value="13:00">13:00</option>
+            <option value="16:00">16:00</option>
+            <option value="12:00">12:00</option>
         </select>
     </div>
     <button type="submit">Book New Treatment</button>

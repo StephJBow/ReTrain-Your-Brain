@@ -1,0 +1,61 @@
+{% extends "base.jinja" %}
+
+{% block content %}
+
+<form action="/booking/{{ booking.id }}/edit_booking" method="post">
+    <div>
+        <label for="customer_name">Customer Name:</label>
+        <input  type="text"
+                value={{ booking.customer_name }}
+                id="customer_name"
+                name="customer_name"
+                required
+                autofocus
+        />
+    </div>
+    <div>
+        <label for="treatment_name">Treatment Name:</label>
+        <select name="treatment_id"
+                id="treatment_name" 
+                required >
+                {% for treatment  in treatments %}
+                <option 
+                    value={{ treatment.id }}
+                    {% if booking.treatment.id == treatment.id %}
+                    selected
+                    {% endif %}  
+                    >{{ treatment.treatment_name }}</option>   
+                {% endfor %}
+        </select>
+    </div>
+    <div>
+        <label for="booking_date">Booking Date:</label>
+        <select name="booking_date"
+                id="booking_date" 
+                required >
+                <option value="14.03.2264">14.03.2264</option>
+                <option value="07.11.2264">07.11.2264</option>
+                <option value="01.01.2265">01.01.2265</option>
+                <option value="29.01.2265">29.01.2265</option>
+        </select>
+    </div>
+    <div>
+        <label for="booking_time">Booking Time:</label>
+        <select name="booking_time"
+                id="booking_time" 
+                required >
+                <option value="10:00">10:00</option>
+                <option value="13:00">13:00</option>
+                <option value="16:00">16:00</option>
+                <option value="12:00">12:00</option>
+        </select>
+    </div>
+    <button type="submit">Edit Booking</button>
+</form>
+
+
+<form action="/booking/{{ booking.id }}/delete" method="post">
+    <button type="submit">Delete Me</button>
+</form>
+
+{% endblock %}

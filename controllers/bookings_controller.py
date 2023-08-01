@@ -23,30 +23,39 @@ def new_booking_page():
 @bookings_blueprint.route('/new_booking', methods=['POST'])
 def new_booking():
     customer_name = request.form['customer_name']
-    treatment_name = request.form['treatment_name']
+    treatment_id = request.form['treatment_id']
     booking_date = request.form['booking_date']
     booking_time = request.form['booking_time']
-    new_booking = Bookings(customer_name=customer_name, treatment_name = treatment_name, booking_date = booking_date, booking_time=booking_time)
+    new_booking = Bookings(customer_name=customer_name, treatment_id = treatment_id, booking_date = booking_date, booking_time=booking_time)
     db.session.add(new_booking)
     db.session.commit()
     return redirect('/booking')
 
-@bookings_blueprint.route('/booking/<id>/edit')
+@bookings_blueprint.route('/booking/<id>/edit_booking')
 def edit_booking_page(id):
-    bookings = Bookings.query.get(int(id))
-    return render_template('bookings/edit_booking.jinja', bookings=bookings) #create edit_booking.jinja
+    booking = Bookings.query.get(int(id))
+    treatments = Treatments.query.all()
+    return render_template('booking/edit_booking.jinja', booking=booking, treatments=treatments)
 
-@bookings_blueprint.route('/booking/<id>/edit', methods=['POST'])
+@bookings_blueprint.route('/booking/<id>/edit_booking', methods=['POST'])
 def edit_booking(id):
-    bookings = Bookings.query.get(int(id))
-    treatment_name = request.form['treatment_name']
+    booking = Bookings.query.get(int(id))
+    customer_name = request.form['customer_name']
+    treatment_id = request.form['treatment_id']
     booking_date = request.form['booking_date']
     booking_time = request.form['booking_time']
-    id = int(request.form['id'])
-    bookings.treatment_name=treatment_name
-    bookings.booking_date=booking_date
-    bookings.booking_time=booking_time
+    booking.customer_name=customer_name
+    booking.treatment_id=treatment_id
+    booking.booking_date=booking_date
+    booking.booking_time=booking_time
     db.session.commit()   
+    return redirect('/booking')
+
+@bookings_blueprint.route('/booking/<id>/delete', methods=['POST'])
+def delete_booking(id):
+    booking=Bookings.query.get(int(id))
+    db.session.delete(booking)
+    db.session.commit()
     return redirect('/booking')
 
 # @bookings_blueprint.route('/booking', methods=['POST'])

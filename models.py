@@ -7,7 +7,7 @@ class Treatments(db.Model):
     treatment_name = db.Column(db.String(64))
     treatment_price = db.Column(db.String(64))
     treatment_length = db.Column(db.Integer)
-    # songs = db.relationship('Bookings', backref='Treatments', lazy=True)
+    bookings = db.relationship('Bookings', backref='treatment', lazy=True)
 
     def __repr__(self):
         return f'<Treatments: {self.id} {self.treatment_name} {self.treatment_price} {self.treatment_length}>'
@@ -18,13 +18,12 @@ class Bookings(db.Model):
 
     id = db.Column(db.Integer, primary_key = True)
     customer_name = db.Column(db.String(64))
-    treatment_name = db.Column(db.String(64))
     booking_date = db.Column(db.String(64))
     booking_time = db.Column(db.String(64))
     treatment_id = db.Column(db.Integer, db.ForeignKey('treatments.id'))
 
     def __repr__(self):
-        return f'<Bookings: {self.id}: {self.customer_name} {self.treatment_name} {self.booking_date} {self.booking_time}>'
+        return f'<Bookings: {self.id}: {self.customer_name} {self.booking_date} {self.booking_time}>'
 
 
 # Example Model
