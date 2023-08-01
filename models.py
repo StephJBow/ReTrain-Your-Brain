@@ -7,6 +7,7 @@ class Treatments(db.Model):
     treatment_name = db.Column(db.String(64))
     treatment_price = db.Column(db.String(64))
     treatment_length = db.Column(db.Integer)
+    # songs = db.relationship('Bookings', backref='Treatments', lazy=True)
 
     def __repr__(self):
         return f'<Treatments: {self.id} {self.treatment_name} {self.treatment_price} {self.treatment_length}>'
