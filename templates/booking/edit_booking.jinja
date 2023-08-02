@@ -33,10 +33,17 @@
         <select name="booking_date"
                 id="booking_date" 
                 required >
-                <option value="14.03.2264">14.03.2264</option>
-                <option value="07.11.2264">07.11.2264</option>
-                <option value="01.01.2265">01.01.2265</option>
-                <option value="29.01.2265">29.01.2265</option>
+            <option value="14th March 2264">14th March 2264</option>
+            <option value="5th April 2264">5th April 2264</option>
+            <option value="18th May 2264">18th May 2264</option>
+            <option value="9th July 2264">9th July 2264</option>
+            <option value="20th July 2264">20th July 2264</option>
+            <option value="24th August 2264">24th August 2264</option>
+            <option value="2nd November 2264">2nd November 2264</option>
+            <option value="23rd November 2264">23rd November 2264</option>
+            <option value="19th December 2264">19th December 2264</option>
+            <option value="1st January 2265">1st January 2265</option>
+            <option value="29th January 2265">29th January 2265</option>
         </select>
     </div>
     <div>
@@ -44,18 +51,24 @@
         <select name="booking_time"
                 id="booking_time" 
                 required >
+                <option value="08:00">08:00</option>
+                <option value="09:00">09:00</option>
                 <option value="10:00">10:00</option>
-                <option value="13:00">13:00</option>
-                <option value="16:00">16:00</option>
+                <option value="11:00">11:00</option>
                 <option value="12:00">12:00</option>
+                <option value="13:00">13:00</option>
+                <option value="14:00">14:00</option>
+                <option value="15:00">15:00</option>
+                <option value="16:00">16:00</option>
+                <option value="17:00">17:00</option>
         </select>
     </div>
-    <button type="submit">Edit Booking</button>
+    <button type="submit" id="edit_button">Edit Booking</button>
 </form>
 
 
 <form action="/booking/{{ booking.id }}/delete" method="post">
-    <button type="submit">Delete Me</button>
+    <button type="submit" id="delete_button">Delete this Booking</button>
 </form>
 
 {% endblock %}

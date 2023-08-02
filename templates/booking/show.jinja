@@ -16,13 +16,13 @@
     {% for booking in bookings_list %}
     <tr>
         <td><a href="/booking/show.jinja"> {{show_booking}} </a></td>
-        <td>|</td>
+        
         <td>{{ booking_name }}</td>
-        <td>|</td>
+        
         <td>{{ booking_date }}</td>
-        <td>|</td>
+        
         <td>{{ booking_time }}</td>
-        <td>|</td>
+        
     </tr>
     {% endfor %}
 </table>

@@ -1,10 +1,13 @@
 {% extends 'base.jinja' %}
 
 {% block content %}
-<h1>Your Bookings</h1>
+<h1>Your <span style="color: #b964fe">Bookings</span></h1>
 
-<p>List of booked treatments:</p>
+<h2>Congratulations! You're well on your way to improving your life, and becoming a better, more interesting person to be around.</h2>
 
+<p>Here you can find all of your booked mental enhancement treatments. Easily adjust the time or date of those you have booked to fit around your busy schedule, or make a brand new booking for yourself, or for friends and family to make conversations more bearable:</p>
+
+<h2><a href="http://localhost:4999/new_booking">Book a New Treatment here</a></h2>
 <table>
     <tr>
         <th>Name</th>
@@ -19,17 +22,14 @@
     {% for booking in bookings_list %}
     <tr>
         <td>{{booking.customer_name}}</td>
-        <td>|</td>
+        <td></td>
         <td>{{booking.treatment.treatment_name}} </td>
-        <td>|</td>
+        <td></td>
         <td> {{booking.booking_date}} </td>
-        <td>|</td>
+        <td></td>
         <td> {{booking.booking_time}} </td>
-        <td>|</td>
+        <td></td>
         <td> <a href="/booking/{{ booking.id }}/edit_booking">Edit a Treatment here</a> </td>
-        <td>|</td>
-        {# <td><form action="/booking/{{ booking.treatment.id }}/delete" method="post"><button type="submit">Delete Me</button>
-        </td></form> #}
     </tr>
     {% endfor %}
 </table>

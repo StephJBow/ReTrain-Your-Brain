@@ -1,9 +1,10 @@
 {% extends 'base.jinja' %}
 
 {% block content %}
-<h1>Available Treatments</h1>
+<h1>Available <span style="color: #b964fe">Treatments</span></h1>
 
-<p>Book your treatment with us today</p>
+<h2>Peruse our list of life-altering treatments below</h2>
+<p><a href="http://localhost:4999/new_booking">Book your next treatment here and become a more interesting person</a></p>
 
 <table>
     <tr>
@@ -15,15 +16,12 @@
     </tr>
     {% for treatment in treatments %}
     <tr>
-        <td> {{ treatment.treatment_name }} </td>
-        <td>|</td>
-        <td> {{ treatment.treatment_length }} </td>
-        <td>|</td>
-        <td> {{ treatment.treatment_price }} </td>
-        <td>|</td>
+        <td>{{ treatment.treatment_name }}</td>
+        <td></td>
+        <td>{{ treatment.treatment_length }}</td>
+        <td></td>
+        <td>{{ treatment.treatment_price }}</td>
     </tr>
     {% endfor %}
 </table>
-
-<h3><a href="http://localhost:4999/new_booking">Book a New Treatment here</a></h3>
 {% endblock %}
