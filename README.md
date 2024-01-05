@@ -2,7 +2,7 @@
 
 ## Description
 A web database for a single user to browse and store details of booked wellness treatments.
-This project was built using Python, Flask and PostgreSQL, and using HTML and CSS were used for frontend styling.
+My first solo project, this website was built using Python, Flask and PostgreSQL, and using HTML and CSS were used for frontend styling.
 <br> </br>
 <img width="940" alt="Homepage" src="https://github.com/StephJBow/ReTrain-Your-Brain/assets/136998085/77c397a3-1321-4675-8e0a-24df9145c852">
 <br> </br>
