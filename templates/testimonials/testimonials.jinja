@@ -1,0 +1,23 @@
+{% extends "base.jinja" %}
+
+{% block content %}
+
+<form action="/testimonials" method="post">
+    <div>
+        <label for="reviewer_name">Your Name:</label>
+        <input type="text" id="reviewer_name" name="reviewer_name" />
+    </div>
+    <div>
+        <label for="comment">Leave Your Review Here:</label>
+        <textarea name="comment" id="comment" name="comment"></textarea>
+    </div>
+</form>
+
+
+{# <label for="review">Add a Review</label>
+<textarea name="review" id="review" cols="30" rows="10"></textarea>
+<input class="btn btn--action" type='submit' value="Visit">
+</form> #}
+
+
+{% endblock %}

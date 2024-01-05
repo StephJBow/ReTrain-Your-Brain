@@ -26,9 +26,12 @@ class Bookings(db.Model):
         return f'<Bookings: {self.id}: {self.customer_name} {self.booking_date} {self.booking_time}>'
 
 
-# Example Model
-# ------------------------------------------------
-# class User(db.Model):
-#     __tablename__ = "users"
-#     id = db.Column(db.Integer, primary_key=True)
-#     name = db.Column(db.String(64))
+class Testimonials(db.Model):
+    __tablename__ = "testimonials"
+
+    id = db.Column(db.Integer, primary_key = True)
+    reviewer_name = db.Column(db.String(64))
+    comment = db.Column(db.Text())
+    
+    def __repr__(self):
+        return f'<Reviews: {self.id} {self.reviewer_name} {self.comment}>'

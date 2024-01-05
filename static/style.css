@@ -48,7 +48,6 @@ body {
         color: rgb(83, 80, 80);
         padding-top: 40px;
         padding-left: 16px;
-        /* padding-bottom: 8px; */
         font-size: 40px;
     }
 
@@ -184,15 +183,3 @@ body {
         text-align: left;
         padding-left: 40px;
     }
-    /* .header {
-        height: 64px;
-        display: flex;
-        align-items: center;
-    } */
-
-    /* .hero > .container {
-        display: flex;
-        justify-content: space-between; /
-        align-items: center;
-        height: 100%;
-    } */
